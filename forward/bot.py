@@ -80,7 +80,7 @@ class ForwardBot(Plugin):
         if (
                 evt.content.msgtype == MessageType.NOTICE
                 or evt.sender == self.client.mxid
-                or evt.content.body[0:3] == '!tr'
+                or evt.content.body[0:4] == '!fwd'
         ):
             self.log.info('Event handler Message content: %s', pprint(evt.content.body))
             return
@@ -96,7 +96,7 @@ class ForwardBot(Plugin):
         await MessageEvent.client.send_message_event(room_id=fwd_room_id, event_type=evt.type, content=evt.content)
 
     @command.new("forward", aliases=["fwd"])
-    @command.argument("fwd_command", required=True)
+    @command.argument("fwd_command", required=False)
     @command.argument("fwd_room_id", pass_raw=True, required=False)
     async def command_handler(self, evt: MessageEvent, fwd_command: str,
                               fwd_room_id: RoomID) -> None:
