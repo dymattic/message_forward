@@ -1,5 +1,5 @@
 id: xyz.maubot.message_forward
-version: 0.0.1
+version: 0.0.2
 modules:
 - forward
 main_class: ForwardBot
