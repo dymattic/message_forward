@@ -1,0 +1,19 @@
+id: xyz.maubot.message_forward
+version: 0.0.1
+modules:
+- forward
+main_class: ForwardBot
+maubot: 0.1.1.dev18
+database: true
+webapp: false
+license: AGPL-3.0-or-later
+extra_files:
+- base-config.yaml
+dependencies: [
+                aiohttp,
+                SQLAlchemy,
+                mautrix,
+                maubot,
+
+]
+soft_dependencies:
