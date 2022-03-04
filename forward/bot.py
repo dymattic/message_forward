@@ -93,7 +93,7 @@ class ForwardBot(Plugin):
         else:
             return
 
-        await MessageEvent.client.send_message_event(room_id=fwd_room_id, event_type=evt.type, content=evt.content)
+        await self.client.send_message_event(room_id=fwd_room_id, event_type=evt.type, content=evt.content)
 
     @command.new("forward", aliases=["fwd"])
     @command.argument("fwd_command", required=False)
